@@ -1,6 +1,5 @@
-// app/layout.tsx
 import "~/app/globals.css";
-
+import { ThemeProvider } from "~/contexts/ThemeContext";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { cookies } from "next/headers";
@@ -20,12 +19,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await getServerSession(authOptions);
-  
+
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>
+      <body className="scrollbar-pink">
         <Providers session={session} cookies={cookies().toString()}>
-          {children}
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
         </Providers>
       </body>
     </html>

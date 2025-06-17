@@ -1,5 +1,9 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/auth/signin/page": "app/auth/signin/page.js",
   "/chat/page": "app/chat/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
-  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js"
+  "/api/trpc/[trpc]/route": "app/api/trpc/[trpc]/route.js",
+  "/api/chat/route": "app/api/chat/route.js"
 }

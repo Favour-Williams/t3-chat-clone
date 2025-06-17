@@ -40,6 +40,17 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptions = {
   secret: env.NEXTAUTH_SECRET,
+  
+  // Custom pages - this is what redirects to your custom sign-in page
+  pages: {
+    signIn: "/auth/signin",
+    // You can also customize other pages:
+    // signOut: "/auth/signout",
+    // error: "/auth/error",
+    // verifyRequest: "/auth/verify-request",
+    // newUser: "/auth/new-user"
+  },
+  
   callbacks: {
     session: ({ session, user }) => ({
       ...session,

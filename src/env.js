@@ -35,6 +35,7 @@ export const env = createEnv({
     OPENROUTER_API_KEY: z.string().optional(),
     GROQ_API_KEY: z.string().optional(),
     HUGGINGFACE_API_KEY: z.string().optional(),
+    BLOB_READ_WRITE_TOKEN: z.string(),
   },
 
   /**
@@ -62,6 +63,7 @@ export const env = createEnv({
     OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY,
     GROQ_API_KEY: process.env.GROQ_API_KEY,
     HUGGINGFACE_API_KEY: process.env.HUGGINGFACE_API_KEY,
+    BLOB_READ_WRITE_TOKEN: process.env.BLOB_READ_WRITE_TOKEN,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
