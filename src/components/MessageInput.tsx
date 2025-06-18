@@ -246,9 +246,8 @@ export default function MessageInput({
     setSelectedProvider(newProvider);
     
     // Set default model for the provider
-    if (LLM_PROVIDERS[newProvider]?.models.length > 0) {
-      setSelectedModel(LLM_PROVIDERS[newProvider].models[0]);
-    }
+    const firstModel = LLM_PROVIDERS[newProvider].models[0] || "";
+    setSelectedModel(firstModel);
   };
 
   const formatFileSize = (bytes: number): string => {
