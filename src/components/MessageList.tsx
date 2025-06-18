@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { User, Bot, Sparkles } from "lucide-react";
 import { type RouterOutputs } from "~/trpc/shared";
 
-type Message = RouterOutputs["chat"]["getById"]["messages"][0];
+type Message = NonNullable<RouterOutputs["chat"]["getById"]>["messages"][0];
 
 interface MessageListProps {
   messages: Message[];
