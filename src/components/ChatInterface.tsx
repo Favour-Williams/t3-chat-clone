@@ -9,7 +9,7 @@ import MessageInput from "./MessageInput";
 import { type RouterOutputs } from "~/trpc/shared";
 
 type Chat = RouterOutputs["chat"]["getAll"][0];
-type Message = RouterOutputs["chat"]["getById"]["messages"][0];
+type Message = NonNullable<RouterOutputs["chat"]["getById"]>["messages"][0];
 
 export default function ChatInterface() {
   const { data: session, status } = useSession();
