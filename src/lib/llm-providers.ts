@@ -1,4 +1,4 @@
-// src/server/llm/providers.ts
+// src/lib/llm-providers.ts
 import { env } from "~/env";
 
 export interface LLMProvider {
