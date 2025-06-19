@@ -160,4 +160,6 @@ For support or questions, please open an issue on GitHub.
 
 ---
 MIT License
+
+---
 **Happy chatting!** 💬✨🤖
