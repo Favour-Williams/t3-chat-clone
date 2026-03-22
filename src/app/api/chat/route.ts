@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerAuthSession } from "~/server/auth";
-import { providers } from "~/lib/llm-providers"; // Adjust import path as needed
-
+import { providers } from "~/lib/llm-providers"; 
 // Force Node.js runtime instead of Edge Runtime
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

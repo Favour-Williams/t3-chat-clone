@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { Send, Square, Paperclip, Settings, X, Upload, FileText, Image, File } from "lucide-react";
 import { useTheme } from "~/contexts/ThemeContext";
+import { LLM_PROVIDER_CONFIG as LLM_PROVIDERS } from "~/lib/llm-providers"; // 👈 add this line
+
 export interface AttachedFile {
   id: string;
   file: File;
@@ -18,24 +20,24 @@ interface MessageInputProps {
   onStopGeneration: () => void;
 }
 
-const LLM_PROVIDERS = {
-  openrouter: {
-    name: "OpenRouter",
-    models: [
-      "mistralai/mistral-7b-instruct:free",
-      "deepseek/deepseek-r1-0528:free",
-      "meta-llama/llama-4-scout:free",
-    ],
-  },
-  groq: {
-    name: "Groq",
-    models: [
-      "llama3-8b-8192",
-      "llama3-70b-8192",
-      "gemma2-9b-it",
-    ],
-  },
-};
+// const LLM_PROVIDERS = {
+//   openrouter: {
+//     name: "OpenRouter",
+//     models: [
+//       "meta-llama/llama-3.3-70b-instruct:free",
+//       "deepseek/deepseek-r1:free",
+//       "mistralai/mistral-small-3.1-24b-instruct:free",
+//     ],
+//   },
+//   groq: {
+//     name: "Groq",
+//     models: [
+//       "llama-3.1-8b-instant",
+//       "llama-3.3-70b-versatile",
+//       "llama3-groq-8b-8192-tool-use-preview",
+//     ],
+//   },
+// };
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const SUPPORTED_FILE_TYPES = {
@@ -55,8 +57,12 @@ export default function MessageInput({
   onStopGeneration,
 }: MessageInputProps) {
   const [message, setMessage] = useState("");
-  const [selectedProvider, setSelectedProvider] = useState("openrouter");
-  const [selectedModel, setSelectedModel] = useState("mistralai/mistral-7b-instruct:free");
+
+
+  const [selectedProvider, setSelectedProvider] = useState("groq");
+  const [selectedModel, setSelectedModel] = useState("llama-3.1-8b-instant");
+
+
   const [showSettings, setShowSettings] = useState(false);
   const [isProviderError, setIsProviderError] = useState(false);
   const [attachedFiles, setAttachedFiles] = useState<AttachedFile[]>([]);
@@ -200,7 +206,7 @@ export default function MessageInput({
     e.preventDefault();
     if ((message.trim() || attachedFiles.length > 0) && !isStreaming) {
       // Validate provider/model
-      if (!LLM_PROVIDERS[selectedProvider as keyof typeof LLM_PROVIDERS]?.models.includes(selectedModel)) {
+      if (!LLM_PROVIDERS[selectedProvider as keyof typeof LLM_PROVIDERS]?.models.includes(selectedModel as never)) {
         setIsProviderError(true);
         return;
       }
@@ -246,9 +252,8 @@ export default function MessageInput({
     setSelectedProvider(newProvider);
     
     // Set default model for the provider
-    if (LLM_PROVIDERS[newProvider]?.models.length > 0) {
-      setSelectedModel(LLM_PROVIDERS[newProvider].models[0]);
-    }
+    const firstModel = LLM_PROVIDERS[newProvider].models[0] || "";
+    setSelectedModel(firstModel);
   };
 
   const formatFileSize = (bytes: number): string => {

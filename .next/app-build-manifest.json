@@ -1,30 +1,48 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-9e23014fb66716b2.js",
+      "static/chunks/fd9d1056-0df43d748afc9f64.js",
+      "static/chunks/117-7fd951209f887f1d.js",
+      "static/chunks/main-app-fea51ba1ff17cbbe.js",
+      "static/chunks/app/_not-found/page-184ab51d4b928e97.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-9e23014fb66716b2.js",
+      "static/chunks/fd9d1056-0df43d748afc9f64.js",
+      "static/chunks/117-7fd951209f887f1d.js",
+      "static/chunks/main-app-fea51ba1ff17cbbe.js",
+      "static/css/56552860402827c8.css",
+      "static/chunks/605-838be63625c21f0c.js",
+      "static/chunks/128-51f0b45c6f8f02b9.js",
+      "static/chunks/app/layout-66eb5641957f96c0.js"
     ],
     "/auth/signin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/auth/signin/page.js"
+      "static/chunks/webpack-9e23014fb66716b2.js",
+      "static/chunks/fd9d1056-0df43d748afc9f64.js",
+      "static/chunks/117-7fd951209f887f1d.js",
+      "static/chunks/main-app-fea51ba1ff17cbbe.js",
+      "static/chunks/605-838be63625c21f0c.js",
+      "static/chunks/972-11da220353a63be1.js",
+      "static/chunks/app/auth/signin/page-7197a55a0a6a9ebc.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-9e23014fb66716b2.js",
+      "static/chunks/fd9d1056-0df43d748afc9f64.js",
+      "static/chunks/117-7fd951209f887f1d.js",
+      "static/chunks/main-app-fea51ba1ff17cbbe.js",
+      "static/chunks/972-11da220353a63be1.js",
+      "static/chunks/app/page-e617dd74f676bdf1.js"
     ],
     "/chat/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/chat/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/webpack-9e23014fb66716b2.js",
+      "static/chunks/fd9d1056-0df43d748afc9f64.js",
+      "static/chunks/117-7fd951209f887f1d.js",
+      "static/chunks/main-app-fea51ba1ff17cbbe.js",
+      "static/chunks/605-838be63625c21f0c.js",
+      "static/chunks/128-51f0b45c6f8f02b9.js",
+      "static/chunks/707-244f1d0cb2df5bd2.js",
+      "static/chunks/app/chat/page-2ef65973b7a086ee.js"
     ]
   }
 }
