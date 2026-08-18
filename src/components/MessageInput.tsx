@@ -60,7 +60,8 @@ export default function MessageInput({
 
 
   const [selectedProvider, setSelectedProvider] = useState("groq");
-  const [selectedModel, setSelectedModel] = useState("llama-3.1-8b-instant");
+  const [selectedModel, setSelectedModel] = useState(LLM_PROVIDERS.groq.models[0]);
+
 
 
   const [showSettings, setShowSettings] = useState(false);
