@@ -60,7 +60,7 @@ export default function MessageInput({
 
 
   const [selectedProvider, setSelectedProvider] = useState("groq");
-  const [selectedModel, setSelectedModel] = useState(LLM_PROVIDERS.groq.models[0]);
+  const [selectedModel, setSelectedModel] = useState("openai/gpt-oss-120b");
 
 
 
