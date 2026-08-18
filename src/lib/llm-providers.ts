@@ -62,10 +62,13 @@ export class OpenRouterProvider implements LLMProvider {
 
 export class GroqProvider implements LLMProvider {
   name = "Groq";
+  // Verified live against GET https://api.groq.com/openai/v1/models
   models = [
-    "llama-3.1-8b-instant",   
-    "llama-3.3-70b-versatile", 
-    "mixtral-8x7b-32768",
+    "openai/gpt-oss-120b",     // best general-purpose, tools + reasoning + JSON mode
+    "openai/gpt-oss-20b",      // faster/cheaper variant
+    "qwen/qwen3.6-27b",        // strong reasoning, supports image input too
+    "groq/compound",           // built-in web search + code execution
+    "groq/compound-mini",      // lighter compound variant
   ];
 
   async generate(messages: any[], model: string, maxTokens?: number) {
@@ -119,12 +122,12 @@ export const providers: Record<string, LLMProvider> = {
 
 // llm-providers.ts — add this export at the bottom
 export const LLM_PROVIDER_CONFIG = {
-  
   groq: {
     name: "Groq",
     models: [
-      "llama-3.1-8b-instant",
-      "llama-3.3-70b-versatile",
+      "openai/gpt-oss-120b",
+      "openai/gpt-oss-20b",
+      "qwen/qwen3.6-27b",
     ],
   },
 } as const;
